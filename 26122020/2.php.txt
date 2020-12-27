@@ -1,0 +1,25 @@
+2222222222222222
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // textBox2.Text = openFileDialog1.FileName;
+                textBox2.Text= File.ReadAllText(openFileDialog1.FileName);
+
+            }
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            using (SaveFileDialog dialog = new SaveFileDialog())
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    // textBox2.Text = openFileDialog1.FileName;
+                    File.WriteAllText(dialog.FileName, textBox2.Text);
+                }
+            }
+          
+            
+
+        }
+    }
+}
